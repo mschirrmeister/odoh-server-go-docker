@@ -43,8 +43,6 @@ jobs:
         with:
           platforms: linux/amd64,linux/arm64,linux/arm
           push: true
-          build-args: |
-            VUE_APP_VERSION=v0.0.7-alpha-${{ steps.current-time.outputs.formattedTime }}
           tags: |
             mschirrmeister/odoh-server-go
             mschirrmeister/odoh-server-go:latest
