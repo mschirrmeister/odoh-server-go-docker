@@ -46,6 +46,5 @@ jobs:
           tags: |
             mschirrmeister/odoh-server-go
             mschirrmeister/odoh-server-go:latest
-            mschirrmeister/odoh-server-go:v0.1.2-7986d2f
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache

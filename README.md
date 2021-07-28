@@ -4,6 +4,12 @@ This project provides a **Dockerfile** for **Cloudflares** [odoh-server-go](http
 
 The **odoh-server-go** can be used as an ODoH **target** or **relay**.
 
+**ODoH** stands for **Oblivious DNS over HTTPS**.
+
+Below are a few examples on how to run it. The recommended way is to run it behind a proxy who handles the TLS termination.
+
+## Examples
+
 Run the container with a local certificate, where odoh-server-go handles TLS itself.
 
     docker run -it -d \
