@@ -8,11 +8,16 @@ ENV APP_HOME /app
 RUN mkdir -p $APP_HOME/build
 WORKDIR $APP_HOME/build
 
+ARG TARGETOS
+ARG TARGETARCH
+
+ARG CGO_ENABLED=0
+
 RUN git clone https://github.com/cloudflare/odoh-server-go.git . \
     && git checkout 7986d2f1d986205922cf7add0dfa2116d5ef6fae \
     && git reset --hard
 
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 make all \
+RUN CGO_ENABLED=${CGO_ENABLED} GOOS=${TARGETOS} GOARCH=${TARGETARCH} make all \
     && cp -p odoh-server $APP_HOME/
 
 WORKDIR $APP_HOME
