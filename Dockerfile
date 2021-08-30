@@ -14,7 +14,7 @@ ARG TARGETARCH
 ARG CGO_ENABLED=0
 
 RUN git clone https://github.com/cloudflare/odoh-server-go.git . \
-    && git checkout 7986d2f1d986205922cf7add0dfa2116d5ef6fae \
+    && git checkout 5a9bf1f5b7b3f676558e8a4e50f94abd032ceb4a \
     && git reset --hard
 
 RUN CGO_ENABLED=${CGO_ENABLED} GOOS=${TARGETOS} GOARCH=${TARGETARCH} make all \
